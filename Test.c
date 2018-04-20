@@ -1,5 +1,5 @@
 #include <stdio.h>
-in main(){
+int main(){
   printf("hello Jenkins, good day.");
   retunr 0;
 }
