@@ -1,11 +1,6 @@
 #include <stdio.h>
-void MyFunct();
 int main(){
-  printf("hello Jenkins, good day.");
-  printf("\n");
-  MyFunct();
-  retunr 0;
-}
-MyFunct{
-  printf("Print from the function");
-}
+  printf("hello Jenkins, good day.\n");
+  printf("this is is a new line");
+  printf(" NEXT!!../");
+  return 0;
