@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main(){
-  printf("hello Jenkins, good day.\n");
+  printf("\n\nhello Jenkins, good day.\n");
   printf("this is is a new line");
-  printf(" NEXT!!../");
+  printf(" NEXT!!..\n\n");
   return 0;
 }
