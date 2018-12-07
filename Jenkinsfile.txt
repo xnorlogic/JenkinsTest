@@ -7,7 +7,7 @@
 pipeline {
     agent {
         node {                          
-            label 'My_Node_1'
+            label 'Zorin_Node'
         }
     }
 	environment {
@@ -16,35 +16,35 @@ pipeline {
     stages {
 		stage('Stage 1') {
             steps {
-                bat 'echo hello 1'
+                sh 'echo hello 1'
             }
 		}
 		stage('Stage 2') {
             steps {
-				bat 'echo hello 2'
+				sh 'echo hello 2'
             }
 		}
 		stage('Stage 3') {
             steps {
-				bat 'echo hello 3'
+				sh 'echo hello 3'
             }
 		}
     }
 	post {
 		always {
-            echo 'One way or another, I have finished'
+            sh 'One way or another, I have finished'
         }
         success {
-            echo 'I succeeeded!'	
+            sh 'I succeeeded!'	
         }
         unstable {
-            echo 'I am unstable :/'
+            sh 'I am unstable :/'
         }
         failure {
-            echo 'I failed :('
+            sh 'I failed :('
         }
         changed {
-            echo 'Things were different before...'
+            sh 'Things were different before...'
         }
 	}
 }
