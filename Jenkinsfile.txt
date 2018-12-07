@@ -1,0 +1,50 @@
+/*---------------------------------------------------------------------*/
+/*Jenkinsfile                                                          */
+/*Change Log :                                                         */
+/*             Author       Date       Comment                         */
+/*             Andy R       12/06/2018 Initial Templete                */
+/*---------------------------------------------------------------------*/
+pipeline {
+    agent {
+        node {                          
+            label 'My_Node_1'
+        }
+    }
+	environment {
+
+	}
+    stages {
+		stage('Stage 1') {
+            steps {
+                bat 'echo hello 1'
+            }
+		}
+		stage('Stage 2') {
+            steps {
+				bat 'echo hello 2'
+            }
+		}
+		stage('Stage 3') {
+            steps {
+				bat 'echo hello 3'
+            }
+		}
+    }
+	post {
+		always {
+            echo 'One way or another, I have finished'
+        }
+        success {
+            echo 'I succeeeded!'	
+        }
+        unstable {
+            echo 'I am unstable :/'
+        }
+        failure {
+            echo 'I failed :('
+        }
+        changed {
+            echo 'Things were different before...'
+        }
+	}
+}
