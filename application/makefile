@@ -22,7 +22,7 @@ rebuild: clean all
 
 # All Target -------------------------------------------------------------------------
 all: $(APP_NAME).o
-Linux: $(APP_NAME).deb
+Linux: $(APP_NAME).o $(APP_NAME).deb
 Windows: $(APP_NAME).exe
 
 # Tool invocations ------------------------------------------------------------------
