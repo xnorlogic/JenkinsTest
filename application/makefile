@@ -21,12 +21,12 @@ MAIN = Test.c
 rebuild: clean all
 
 # All Target -------------------------------------------------------------------------
-all: $(APP_NAME).o $(APP_NAME).exe
+all: $(APP_NAME).o $(APP_NAME).deb
 
 # Tool invocations ------------------------------------------------------------------
-$(APP_NAME).exe: $(OBJ)$(APP_NAME).o
+$(APP_NAME).deb: $(OBJ)$(APP_NAME).o
 	@echo ****Build****
-	-$(CC) -o $(BIN)$(APP_NAME).exe $(OBJ)$(APP_NAME).o
+	-$(CC) -o $(BIN)$(APP_NAME).deb $(OBJ)$(APP_NAME).o
 
 $(APP_NAME).o: $(SRC)Test.c
 	@echo ****Compile****
@@ -34,7 +34,7 @@ $(APP_NAME).o: $(SRC)Test.c
 	
 # Other Targets
 clean:
-	-$(RM) $(PCP_S)$(EXECUTABLES)$(OBJS)$(C_DEPS)$(CPCP_DEPS) bin/$(APP_NAME).exe
+	-$(RM) $(PCP_S)$(EXECUTABLES)$(OBJS)$(C_DEPS)$(CPCP_DEPS) bin/$(APP_NAME).deb
 	-@echo **** Clean Complete ****
 
 .PHONY: all clean dependents
