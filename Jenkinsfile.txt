@@ -32,19 +32,19 @@ pipeline {
     }
 	post {
 		always {
-            sh 'One way or another, I have finished'
+            sh 'echo One way or another, I have finished'
         }
         success {
-            sh 'I succeeeded!'	
+            sh 'echo I succeeeded!'	
         }
         unstable {
-            sh 'I am unstable :/'
+            sh 'echo I am unstable :/'
         }
         failure {
-            sh 'I failed :('
+            sh 'echo I failed :('
         }
         changed {
-            sh 'Things were different before...'
+            sh 'echo Things were different before...'
         }
 	}
 }
