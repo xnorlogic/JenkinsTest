@@ -18,7 +18,7 @@ pipeline {
     stages {
 		stage('Stage 1') {
             steps {
-                sh 'echo hello'
+                sh 'ls'
             }
 		}
 		stage('Make the application') {
