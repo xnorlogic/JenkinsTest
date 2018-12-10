@@ -24,7 +24,6 @@ pipeline {
             steps {
 				sh '''
 				cd application
-				ls
 				make
 				'''
             }
@@ -32,6 +31,11 @@ pipeline {
 		stage('Run the binary') {
             steps {
 				sh './${BINARY_PATH}${APP_NAME}.deb'
+				/*Clean the application*/
+				sh '''
+				cd application
+				make clean
+				'''
             }
 		}
     }
@@ -41,6 +45,7 @@ pipeline {
         }
         success {
             sh 'echo I succeeeded!'	
+			deleteDir()
         }
         unstable {
             sh 'echo I am unstable :/'
