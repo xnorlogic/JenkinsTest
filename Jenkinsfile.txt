@@ -6,7 +6,8 @@
 /*---------------------------------------------------------------------*/
 pipeline {
     agent {
-        node {                          
+        node {
+			/*This node is Linux*/
             label 'Zorin_Node'
         }
     }
@@ -15,13 +16,14 @@ pipeline {
 		BINARY_PATH = 'application/bin/'
 	}
     stages {
-		stage('Stage 1') {
+		stage('Show the Root Directory') {
             steps {
                 sh 'ls'
             }
 		}
 		stage('Make the application') {
             steps {
+				/*Make the application for Linux*/
 				sh '''
 				cd application
 				make Linux
