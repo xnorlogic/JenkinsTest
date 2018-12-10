@@ -13,7 +13,7 @@ pipeline {
 	environment {
 		APP_NAME = 'Test_GCC'
 		ROOT_PATH = 'application/'
-		BINARY_PATH = '${ROOT_PATH}bin/'
+		BINARY_PATH = ${ROOT_PATH}'bin/'
 	}
     stages {
 		stage('Stage 1') {
