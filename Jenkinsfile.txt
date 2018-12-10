@@ -28,7 +28,7 @@ pipeline {
 		}
 		stage('Run the binary') {
             steps {
-				sh '.\application\bin\${APP_NAME}.deb'
+				sh './application/bin/${APP_NAME}.deb'
             }
 		}
     }
