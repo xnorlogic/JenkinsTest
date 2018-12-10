@@ -34,7 +34,7 @@ $(APP_NAME).o: $(SRC)Test.c
 	
 # Other Targets
 clean:
-	-$(RM) $(PCP_S)$(EXECUTABLES)$(OBJS)$(C_DEPS)$(CPCP_DEPS) bin/$(APP_NAME).deb
+	-$(RM) $(OBJ)$(APP_NAME).o $(BIN)$(APP_NAME).deb
 	-@echo **** Clean Complete ****
 
 .PHONY: all clean dependents
