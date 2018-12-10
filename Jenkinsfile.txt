@@ -11,17 +11,20 @@ pipeline {
         }
     }
 	environment {
-		ECHO_TEST_1 = 'hello from variable'
+		SRC_DIR = '//src'
 	}
     stages {
 		stage('Stage 1') {
             steps {
-                sh 'echo %ECHO_TEST_1%'
+                sh 'echo hello'
             }
 		}
 		stage('Stage 2') {
             steps {
-				sh 'echo hello 2'
+				/*Compile the source*/
+				sh 'gcc %SRC_DIR%//Test.c -o %SRC_DIR%//Test.o'
+				/*Run the binary...*/
+				sh './/%SRC_DIR%//Test.o'
             }
 		}
 		stage('Stage 3') {
