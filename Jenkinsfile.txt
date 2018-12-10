@@ -11,8 +11,9 @@ pipeline {
         }
     }
 	environment {
-		SRC_DIR = 'src'
 		APP_NAME = 'Test_GCC'
+		ROOT_PATH = 'application/'
+		BINARY_PATH = '${ROOT_PATH}bin/'
 	}
     stages {
 		stage('Stage 1') {
@@ -28,7 +29,7 @@ pipeline {
 		}
 		stage('Run the binary') {
             steps {
-				sh './application/bin/${APP_NAME}.deb'
+				sh './${BINARY_PATH}${APP_NAME}.deb'
             }
 		}
     }
