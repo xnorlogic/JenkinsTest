@@ -12,6 +12,7 @@ pipeline {
     }
 	environment {
 		SRC_DIR = 'src'
+		APP_NAME = 'Test_GCC'
 	}
     stages {
 		stage('Stage 1') {
@@ -19,17 +20,15 @@ pipeline {
                 sh 'echo hello'
             }
 		}
-		stage('Stage 2') {
+		stage('Make the application') {
             steps {
-				/*Compile the source*/
-				sh 'gcc ${SRC_DIR}/Test.c -o ${SRC_DIR}/Test.o'
-				/*Run the binary...*/
-				sh './${SRC_DIR}/Test.o'
+				sh 'cd application'
+				sh 'make'
             }
 		}
-		stage('Stage 3') {
+		stage('Run the binary') {
             steps {
-				sh 'echo hello 3'
+				sh '.\application\bin\${APP_NAME}.deb'
             }
 		}
     }
