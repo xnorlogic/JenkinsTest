@@ -24,6 +24,7 @@ pipeline {
 		stage('Make the application') {
             steps {
 				sh 'cd application'
+				sh 'ls'
 				sh 'make'
             }
 		}
