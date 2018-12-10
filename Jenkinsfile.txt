@@ -22,7 +22,7 @@ pipeline {
 		stage('Stage 2') {
             steps {
 				/*Compile the source*/
-				sh 'gcc ${SRC_DIR}/SRC_DIR/Test.c -o ${SRC_DIR}/Test.o'
+				sh 'gcc ${SRC_DIR}/Test.c -o ${SRC_DIR}/Test.o'
 				/*Run the binary...*/
 				sh './${SRC_DIR}/Test.o'
             }
