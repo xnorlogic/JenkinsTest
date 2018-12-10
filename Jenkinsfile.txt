@@ -11,7 +11,7 @@ pipeline {
         }
     }
 	environment {
-		SRC_DIR = '//src'
+		SRC_DIR = '/src'
 	}
     stages {
 		stage('Stage 1') {
@@ -22,9 +22,9 @@ pipeline {
 		stage('Stage 2') {
             steps {
 				/*Compile the source*/
-				sh 'gcc %SRC_DIR%//Test.c -o %SRC_DIR%//Test.o'
+				sh 'gcc ${SRC_DIR}/SRC_DIR/Test.c -o ${SRC_DIR}/Test.o'
 				/*Run the binary...*/
-				sh './/%SRC_DIR%//Test.o'
+				sh './${SRC_DIR}/Test.o'
             }
 		}
 		stage('Stage 3') {
