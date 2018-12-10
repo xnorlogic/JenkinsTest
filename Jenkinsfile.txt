@@ -23,9 +23,11 @@ pipeline {
 		}
 		stage('Make the application') {
             steps {
-				sh 'cd application'
-				sh 'ls'
-				sh 'make'
+				sh '''
+				cd application
+				ls
+				make
+				'''
             }
 		}
 		stage('Run the binary') {
