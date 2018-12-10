@@ -11,12 +11,12 @@ pipeline {
         }
     }
 	environment {
-
+		ECHO_TEST_1 = 'hello from variable'
 	}
     stages {
 		stage('Stage 1') {
             steps {
-                sh 'echo hello 1'
+                sh 'echo %ECHO_TEST_1%'
             }
 		}
 		stage('Stage 2') {
